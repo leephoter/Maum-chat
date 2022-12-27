@@ -15,8 +15,10 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "@types/firebase": "^3.2.1",
     "electron-serve": "^1.1.0",
     "electron-store": "^8.1.0",
+    "firebase": "^9.15.0",
     "sass": "^1.57.1"
   },
   "devDependencies": {
