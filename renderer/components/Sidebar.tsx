@@ -1,14 +1,21 @@
 import Img from './Img';
 import styles from './Sidebar.module.scss';
+import { userSignOut } from 'utils/firebaseAuth';
+import { useRouter } from 'next/router';
 
 export default function Sidebar() {
+  const router = useRouter();
+  const logOut = (e: React.MouseEvent<HTMLButtonElement>) => {
+    userSignOut();
+    router.push('./login');
+  };
   return (
     <div className={styles.sidebar}>
       <div className={styles.navbar}>
         <span className={styles.logo}>Maum Chat</span>
         <div className={styles.user}>
           <span>{'Nickname~~'}</span>
-          <button>logout</button>
+          <button onClick={logOut}>logout</button>
         </div>
       </div>
       <div className={styles.chats}>
