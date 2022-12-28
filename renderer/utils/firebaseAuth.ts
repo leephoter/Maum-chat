@@ -42,7 +42,6 @@ export const signInWithEmail = async (email, password) => {
 };
 
 export const userSignOut = async () => {
-  const uid = auth.currentUser.uid;
   try {
     signOut(auth);
   } catch (error) {
