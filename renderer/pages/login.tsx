@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from 'utils/config';
+import { setUsers } from 'utils/firebaseUsers';
 
 function Login() {
   const router = useRouter();
@@ -18,7 +19,8 @@ function Login() {
     if (result._tokenResponse?.registered === true) {
       console.log(`Complete Login !!`);
       onAuthStateChanged(auth, (user) => {
-        // token 저장
+        // TODO: token 저장
+        setUsers();
       });
       router.push('/home');
     } else {
@@ -31,8 +33,8 @@ function Login() {
         <span className={styles.logo}>Maum Chat</span>
         <span className={styles.title}>Login</span>
         <form onSubmit={signIn}>
-          <input type="email" placeholder="email" />
-          <input type="password" placeholder="password" />
+          <input type="email" placeholder="email" required />
+          <input type="password" placeholder="password" required />
           <button>Sign in</button>
         </form>
         {err && <p>{err}</p>}
