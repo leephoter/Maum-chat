@@ -10,7 +10,7 @@ export const setUsers = () => {
 };
 
 export const getUsers = async () => {
-  const uid = auth.currentUser.uid;
+  const uid = auth?.currentUser.uid;
   const connectedRef = ref(realtimeDB, 'users');
   try {
     const response = await get(connectedRef);
