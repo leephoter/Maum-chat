@@ -43,10 +43,8 @@ export const signInWithEmail = async (email, password) => {
 
 export const userSignOut = async () => {
   const uid = auth.currentUser.uid;
-  // const myConnectionsRef = ref(realtimeDB, `users/${uid}/connected`);
   try {
     signOut(auth);
-    // set(myConnectionsRef, false);
   } catch (error) {
     console.log(error);
   }
