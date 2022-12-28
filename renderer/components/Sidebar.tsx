@@ -16,10 +16,10 @@ export default function Sidebar() {
 
   const currentUser = auth.currentUser;
 
-  const [test, setTest] = useState([]);
+  const [users, setUsers] = useState([]);
   useEffect(() => {
     getUsers().then((res) => {
-      setTest(res);
+      setUsers(res);
     });
   }, []);
 
@@ -33,7 +33,7 @@ export default function Sidebar() {
         </div>
       </div>
       <div>
-        <UserList test={test} />
+        <UserList users={users} />
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 import Img from './Img';
 import styles from './UserList.module.scss';
 
-export default function UserList({ test }) {
-  const noUsers = !test.length;
+export default function UserList({ users }) {
+  const noUsers = !users.length;
 
   const renderUsers = () =>
-    test.map((user, index) => (
+    users.map((user, index) => (
       <div className={styles.userChat} key={user.displayName + index}>
         <Img src={'/images/logo.png'} width={'50px'} alt="" />
         <div className={styles.userChatInfo}>
