@@ -26,11 +26,8 @@ export default function Sidebar() {
   return (
     <div className={styles.sidebar}>
       <div className={styles.navbar}>
-        <span className={styles.logo}>Maum Chat</span>
-        <div className={styles.user}>
-          <span>{currentUser?.displayName}</span>
-          <button onClick={logOut}>logout</button>
-        </div>
+        <span>{currentUser?.displayName}</span>
+        <button onClick={logOut}>logout</button>
       </div>
       <div>
         <UserList users={users} />
