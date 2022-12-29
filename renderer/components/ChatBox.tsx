@@ -1,16 +1,21 @@
 import styles from './ChatBox.module.scss';
 import Message from './Message';
 import InputMessage from './InputMessage';
-import currentMessagesState from 'store/currentMessages';
+import { currentMessagesState, currentOpponentState } from 'store';
 import { useRecoilValue } from 'recoil';
 
 export default function ChatBox() {
   const messages = useRecoilValue(currentMessagesState);
+  const currentOpponent = useRecoilValue(currentOpponentState);
+
+  const renderOpponent = () =>
+    currentOpponent.map((user) => <span>{`${user}`}</span>);
 
   return (
     <div className={styles.chat}>
       <div className={styles.chatInfo}>
-        <span>{`opponent nickname 님`}</span>
+        {renderOpponent()}
+        <span>{`님`}</span>
       </div>
       {messages.length ? (
         <>
@@ -22,7 +27,7 @@ export default function ChatBox() {
           <InputMessage />
         </>
       ) : (
-        <div className={styles.noMessages}>{'No Messages'}</div>
+        <div className={styles.noMessages}>{'대화할 사용자를 선택하세요'}</div>
       )}
     </div>
   );
