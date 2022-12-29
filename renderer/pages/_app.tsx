@@ -5,6 +5,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from 'utils/config';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { RecoilRoot } from 'recoil';
 
 export default function (props: AppProps) {
   const { Component, pageProps } = props;
@@ -33,7 +34,9 @@ export default function (props: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <Component {...pageProps} />
+      <RecoilRoot>
+        <Component {...pageProps} />
+      </RecoilRoot>
     </>
   );
 }
