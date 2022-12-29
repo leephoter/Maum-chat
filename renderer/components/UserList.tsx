@@ -2,13 +2,16 @@ import styles from './UserList.module.scss';
 import { useSetRecoilState } from 'recoil';
 import currentMessagesState from 'store/currentMessages';
 import { startChat, getChatInfos } from 'utils/firebaseMessage';
+import { currentRoomUidState } from 'store';
 
 export default function UserList({ users }) {
   const noUsers = !users.length;
-
+  const setCurrentRoomUid = useSetRecoilState(currentRoomUidState);
   const setCurrentMessagesState = useSetRecoilState(currentMessagesState);
   const getMessages = async (opponent) => {
     startChat(opponent).then((res) => {
+      const roomUid = res;
+      setCurrentRoomUid(roomUid);
       getChatInfos(res).then((res) => {
         setCurrentMessagesState(res.chat);
       });

@@ -65,3 +65,17 @@ export const getChatInfos = async (uid) => {
   }
   return result;
 };
+
+export const sendChat = async (chatRoomUID, message) => {
+  const uid = auth.currentUser.uid;
+  const displayName = auth.currentUser.displayName;
+  const chatMessageRef = ref(
+    realtimeDB,
+    `oneOnOneChatRooms/${chatRoomUID}/chat`
+  );
+  const chat = await get(chatMessageRef);
+  set(chatMessageRef, [
+    ...chat.val(),
+    { message: message, uid: uid, displayName: displayName },
+  ]);
+};
