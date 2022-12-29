@@ -1,16 +1,27 @@
 import styles from './InputMessage.module.scss';
 import { sendChat } from 'utils/firebaseMessage';
-import { currentRoomUidState } from 'store';
-import { useRecoilValue } from 'recoil';
+import { currentRoomUidState, currentMessagesState } from 'store';
+import { useRecoilValue, useRecoilState } from 'recoil';
 import { useState, useCallback } from 'react';
+import { auth } from 'utils/config';
 
 export default function InputMessage() {
   const [typingValue, setTypingValue] = useState('');
-
+  const [currentMessages, setCurrentMessages] = useRecoilState(
+    currentMessagesState
+  );
   const currentRoomUidValue = useRecoilValue(currentRoomUidState);
   const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     sendChat(currentRoomUidValue, typingValue).then(() => {
+      setCurrentMessages([
+        ...currentMessages,
+        {
+          message: typingValue,
+          displayName: auth.currentUser.displayName,
+          uid: auth.currentUser.uid,
+        },
+      ]);
       setTypingValue('');
     });
   };

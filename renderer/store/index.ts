@@ -1,3 +1,3 @@
-import currentMessages from './currentMessages';
+import currentMessagesState from './currentMessages';
 import currentRoomUidState from './currentRoomUid';
-export { currentMessages, currentRoomUidState };
+export { currentMessagesState, currentRoomUidState };
