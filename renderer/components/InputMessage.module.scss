@@ -13,11 +13,10 @@
     height: 100%;
     border: none;
     outline: none;
-    color: #2f2d52;
     font-size: 16px;
     resize: none;
     font-family: 'Roboto';
-
+    color: var(--color-text-light);
     &::placeholder {
       color: lightgray;
     }
