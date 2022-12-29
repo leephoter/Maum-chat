@@ -12,32 +12,15 @@
     justify-content: space-between;
     color: var(--color-text-light);
 
-    .logo {
-      font-weight: bold;
-    }
+    button {
+      color: white;
+      font-size: 10px;
+      padding: 0 4px;
+      border: none;
+      cursor: pointer;
 
-    .user {
-      display: flex;
-      gap: 10px;
-
-      img {
-        background-color: white;
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      button {
-        color: white;
-        font-size: 10px;
-        padding: 0 4px;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-          text-decoration: underline;
-        }
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

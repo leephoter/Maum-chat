@@ -19,6 +19,7 @@
     "electron-serve": "^1.1.0",
     "electron-store": "^8.1.0",
     "firebase": "^9.15.0",
+    "recoil": "^0.7.6",
     "sass": "^1.57.1"
   },
   "devDependencies": {
