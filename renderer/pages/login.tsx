@@ -7,12 +7,13 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from 'utils/config';
 import { setUsers } from 'utils/firebaseUsers';
 import { useResetRecoilState } from 'recoil';
-import { currentMessagesState } from 'store';
+import { currentMessagesState, currentOpponentState } from 'store';
 
 function Login() {
   const router = useRouter();
   const [err, setErr] = useState('');
   const setCurrentMessages = useResetRecoilState(currentMessagesState);
+  const setCurrentOpponent = useResetRecoilState(currentOpponentState);
   const signIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const email = e.target[0].value;
@@ -24,6 +25,7 @@ function Login() {
         // TODO: token 저장
         setUsers();
         setCurrentMessages();
+        setCurrentOpponent();
       });
       router.push('/home');
     } else {

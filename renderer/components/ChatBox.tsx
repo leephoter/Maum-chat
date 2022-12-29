@@ -8,14 +8,25 @@ export default function ChatBox() {
   const messages = useRecoilValue(currentMessagesState);
   const currentOpponent = useRecoilValue(currentOpponentState);
 
-  const renderOpponent = () =>
-    currentOpponent.map((user) => <span>{`${user}`}</span>);
+  const renderOpponent = () => {
+    if (!currentOpponent.length) {
+      return;
+    }
+    return (
+      <>
+        {currentOpponent.map((user) => (
+          <span>{`${user}`}</span>
+        ))}
+        <span>{`님`}</span>
+      </>
+    );
+  };
 
   return (
     <div className={styles.chat}>
       <div className={styles.chatInfo}>
         {renderOpponent()}
-        <span>{`님`}</span>
+        <span>{'채팅방'}</span>
       </div>
       {messages.length ? (
         <>
