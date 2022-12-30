@@ -3,11 +3,13 @@ import Message from './Message';
 import InputMessage from './InputMessage';
 import { currentMessagesState, currentOpponentState } from 'store';
 import { useRecoilValue } from 'recoil';
+import { useRef, useEffect } from 'react';
 
 export default function ChatBox() {
   const messages = useRecoilValue(currentMessagesState);
   const currentOpponent = useRecoilValue(currentOpponentState);
-
+  const messageBox = useRef(null);
+  const currentMessages = useRecoilValue(currentMessagesState);
   const renderOpponent = () => {
     if (!currentOpponent.length) {
       return;
@@ -22,6 +24,12 @@ export default function ChatBox() {
     );
   };
 
+  useEffect(() => {
+    if (messageBox.current) {
+      messageBox.current.scrollTop = messageBox.current.scrollHeight;
+    }
+  }, [currentMessages]);
+
   return (
     <div className={styles.chat}>
       <div className={styles.chatInfo}>
@@ -30,7 +38,7 @@ export default function ChatBox() {
       </div>
       {messages.length ? (
         <>
-          <div className={styles.messages}>
+          <div className={styles.messages} ref={messageBox}>
             {[...messages].slice(1).map((messageInfo, index) => (
               <Message key={index} messageInfo={messageInfo} />
             ))}
