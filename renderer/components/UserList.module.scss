@@ -12,6 +12,10 @@
     background-color: var(--color-bg-main-dark);
   }
 
+  &:active {
+    background-color: var(--color-bg-main-light);
+  }
+
   .userChatInfo {
     span {
       font-size: 18px;
