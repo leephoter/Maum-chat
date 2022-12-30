@@ -1,0 +1,36 @@
+.userChat {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text);
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--color-bg-main-dark);
+  }
+
+  &:active {
+    background-color: var(--color-bg-main-light);
+  }
+
+  .userChatInfo {
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+    p {
+      font-size: 14px;
+      color: var(--color-text-light);
+    }
+  }
+}
+
+.noData {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 18px;
+  color: var(--color-text-light);
+}
