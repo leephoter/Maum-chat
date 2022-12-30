@@ -13,6 +13,7 @@
       background-color: var(--color-bg-main-light);
       padding: 10px 20px;
       border-radius: 0px 10px 10px 10px;
+      color: var(--color-text);
       max-width: max-content;
     }
   }
@@ -23,8 +24,7 @@
     .messageContent {
       align-items: flex-end;
       p {
-        background-color: var(--color-bg-btn-light);
-        color: var(--color-text);
+        background-color: var(--color-text-btn-light);
         border-radius: 10px 0px 10px 10px;
       }
     }
