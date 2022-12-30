@@ -17,6 +17,8 @@ export const signUpWithEmail = async (email, password, nickname) => {
     .catch((err) => {
       if (err.code === 'auth/email-already-in-use') {
         alert('이미 사용 중인 이메일입니다');
+      } else if (err.code === 'auth/weak-password') {
+        alert('비밀번호를 강화해주세요');
       }
       return err.code;
     });
