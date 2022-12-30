@@ -35,7 +35,7 @@ export default function UserList({ users }) {
       >
         <div className={styles.userChatInfo}>
           <span>{user.displayName}</span>
-          <p>{'유저 마지막 메시지'}</p>
+          <p>{'님과 채팅하기'}</p>
         </div>
       </button>
     ));
