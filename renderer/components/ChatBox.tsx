@@ -14,8 +14,8 @@ export default function ChatBox() {
     }
     return (
       <>
-        {currentOpponent.map((user) => (
-          <span>{`${user}`}</span>
+        {currentOpponent.map((user, index) => (
+          <span key={`${user}${index}`}>{`${user}`}</span>
         ))}
         <span>{`님`}</span>
       </>
