@@ -8,11 +8,13 @@
 
 1. $ `git clone https://github.com/leephoter/Maum-chat.git`
 2. $ `cd Maum-chat` (프로젝트로 이동)
-3. `renderer` 디렉토리에 `.env` 파일 생성
+3. `/renderer` 디렉토리에 `.env` 파일 생성
 4. $ `npm install` (yarn 사용자 : `yarn install`)
 5. $ `npm run build` (yarn 사용자 : `yarn build`)
-6. $ `cd dist/mac` (window 사용자 : `cd dist/window`)
-7. $ `open Maum\ Chat.app` ($ `Maum-chat/dist` 내부 폴더 안에 app 실행)
+6. `Maum-chat/dist` 내부 폴더 안에 `Maum Chat` 앱 실행
+
+- - mac : ...dist/mac 에 `Maum Chat` 앱 실행
+- - window : ...dis/win-unpacked 에 `Maum Chat` 앱 실행
 
 | -    | version  |
 | ---- | -------- |
