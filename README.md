@@ -36,11 +36,12 @@
 - Next, React
 - Typescript
 - SCSS
+- firebase
+  - Authentication
+  - Realtime Database
 
-### 회원가입
-
-### 로그인
-
-### 유저목록
-
-### 1:1 채팅
+### 기능
+- 회원가입
+- 로그인
+- 유저목록
+- 1:1 채팅
