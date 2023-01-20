@@ -31,6 +31,12 @@
 - NEXT_PUBLIC_FB_APP_ID={appId}
 - NEXT_PUBLIC_FB_MEASUREMENT_ID={measurementId}
 
+## Technology Stack
+- Nextron
+- Next, React
+- Typescript
+- SCSS
+
 ### 회원가입
 
 ### 로그인
@@ -38,5 +44,3 @@
 ### 유저목록
 
 ### 1:1 채팅
-
-### 그룹 채팅 (개발 중...)
