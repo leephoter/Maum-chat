@@ -20,6 +20,11 @@
 | ---- | -------- |
 | node | v16.13.2 |
 
+## Firebase 설정
+
+- `이메일/비밀번호` 설정 Authentication
+- Realtime Database
+
 ## .env 파일 생성 (firebase SDK 설정)
 
 - NEXT_PUBLIC_FB_API_KEY={apiKey}
